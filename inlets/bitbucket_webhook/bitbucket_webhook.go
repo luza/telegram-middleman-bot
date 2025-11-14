@@ -64,12 +64,13 @@ func buildMessage(eventKey string, payload *Payload) string {
 				emoji = "❌"
 			}
 			return fmt.Sprintf(
-				"%s *%s*: [%s](%s)\n%s",
+				"%s *%s*: [%s](%s)\n%s for %s",
 				emoji,
 				util.EscapeMarkdown(payload.Repository.Name),
 				payload.CommitStatus.State,
 				payload.CommitStatus.URL,
 				util.EscapeMarkdown(payload.CommitStatus.Name),
+				util.EscapeMarkdown(payload.CommitStatus.Refname),
 			)
 		}
 		fallthrough

@@ -53,12 +53,15 @@ type Payload struct {
 }
 
 type CommitStatus struct {
-	Name        string    `json:"name"`
+	Key     string `json:"key"`
+	Type    string `json:"type"`
+	State   string `json:"state"`
+	Name    string `json:"name"`
+	Refname string `json:"refname"`
+	// Commit
+	URL string `json:"url"`
+	// Repository
 	Description string    `json:"description"`
-	State       string    `json:"state"`
-	Key         string    `json:"key"`
-	URL         string    `json:"url"`
-	Type        string    `json:"type"`
 	CreatedOn   time.Time `json:"created_on"`
 	UpdatedOn   time.Time `json:"updated_on"`
 	Links       Links     `json:"links"`
